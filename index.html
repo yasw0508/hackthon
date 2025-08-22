@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Slip Detection</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- TensorFlow.js + COCO-SSD -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.18.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+  <!-- EmailJS SDK -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+      emailjs.init("3QYrMh5niDG9iR6tK"); // same as in your EmailJS dashboard
+  })();
+</script>
+</head>
+<body>
+  <h1>Student Slip/Paper Detection</h1>
+
+  <div class="form">
+    <input type="text" id="rollNo" placeholder="Enter Roll Number">
+    <input type="text" id="name" placeholder="Enter Student Name">
+    <button id="saveBtn">Save Student Info</button>
+    <p id="studentStatus">No student info saved.</p>
+  </div>
+
+  <div class="camera">
+    <video id="video" autoplay playsinline></video>
+    <canvas id="overlay"></canvas>
+    <canvas id="snapshot" style="display:none;"></canvas>
+  </div>
+
+  <div class="controls">
+    <button id="scanBtn">Scan Student</button>
+    <label>
+      <input type="checkbox" id="sendEmail" checked>
+      Send email to Principal if papers detected
+    </label>
+  </div>
+
+  <div id="result">Result: -</div>
+  <p id="log">Status: Waiting…</p>
+
+  <script src="app.js"></script>
+</body>
+</html>

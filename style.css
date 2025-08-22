@@ -1,0 +1,48 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: #011129d3;
+  color: #0e0000;
+  text-align: center;
+  padding: 20px;
+}
+
+.camera {
+  position: relative;
+  display: inline-block;
+}
+video, canvas#overlay {
+  width: 480px;
+  height: 360px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(232, 7, 7, 0.3);
+}
+canvas#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+#result.yes { color: red; }
+#result.no  { color: green; }
+
+.controls, .form {
+  margin: 15px 0;
+}
+button {
+  padding: 8px 16px;
+  margin: 5px;
+  border: none;
+  border-radius: 6px;
+  background: #0775eb;
+  color: white;
+  cursor: pointer;
+}
+button:disabled {
+  background: #861f1f;
+  cursor: not-allowed;
+}
